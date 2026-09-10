@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111b35">
+<title>Maths Department • FAC</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="mathCanvas"></canvas>
+<div class="grain"></div>
+
+<header class="topbar">
+  <button class="logo" data-go="home">∑ <span>MATHS</span></button>
+  <nav>
+    <button data-go="events">EVENTS</button>
+    <button data-go="about">ABOUT</button>
+    <button data-go="pyq">PYQ</button>
+    <button data-go="formulas">FORMULAS</button>
+    <button data-go="strength">STRENGTH</button>
+    <button data-go="faculty">FACULTY</button>
+    <button data-go="notices">NOTICES</button>
+    <button data-go="games">GAMES</button>
+  </nav>
+  <button class="menu" id="menu">☰</button>
+</header>
+
+<div id="drawer">
+  <button data-go="events">EVENTS</button><button data-go="about">ABOUT</button>
+  <button data-go="pyq">PYQ</button><button data-go="formulas">FORMULAS</button>
+  <button data-go="strength">STRENGTH</button><button data-go="faculty">FACULTY</button>
+  <button data-go="notices">NOTICES</button><button data-go="games">GAMES</button>
+</div>
+
+<main>
+<section id="home" class="page active">
+  <div class="landing">
+    <div class="math-float f1">π</div><div class="math-float f2">∫</div>
+    <div class="math-float f3">√x</div><div class="math-float f4">∞</div>
+    <div class="math-float f5">Δ</div><div class="math-float f6">f(x)</div>
+    <div class="landing-content">
+      <div class="mini">FAC • ACADEMIC HUB • 2026</div>
+      <h1>MATHS<br><span>DEPARTMENT</span></h1>
+      <p>Numbers, logic, calculus and everything in between.</p>
+      <button class="enter" id="enter">ENTER <b>→</b></button>
+      <div class="hint">SCROLL / MOVE / TAP THE MATH</div>
+    </div>
+  </div>
+</section>
+
+<section id="events" class="page">
+  <div class="headline">
+    <div><span class="kicker">FIRST ON THE BOARD</span><h2>UPCOMING<br>EVENTS</h2></div>
+    <div class="blackbox banner"><img src="banner.png" alt="Department banner" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="img-fallback"><span>BANNER</span><small>Add your banner as <b>banner.png</b></small></div></div>
+  </div>
+  <div class="event-grid">
+    <button class="event featured event-button" data-event="election">
+      <span class="date">HIGHLIGHT • EVENT 01</span>
+      <div class="event-poster"><img src="yimkongyatet.png" alt="Election poster" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="poster-fallback">ELECTION POSTER<br><small>Add <b>yimkongyatet.png</b></small></div></div>
+      <div class="event-copy"><h3>College Election</h3><p>Tap to open event.</p><span class="tiny">OPEN EVENT →</span></div>
+    </button>
+    <button class="event event-button" data-event="event2"><span class="date">EVENT 02</span><h3>Academic Session</h3><p>Tap to open.</p><span class="tiny">OPEN EVENT →</span></button>
+    <button class="event event-button" data-event="event3"><span class="date">EVENT 03</span><h3>Maths Activity</h3><p>Tap to open.</p><span class="tiny">OPEN EVENT →</span></button>
+  </div>
+  <div id="eventModal" class="event-modal" aria-hidden="true">
+    <div class="event-modal-card">
+      <button id="closeEvent" class="modal-close" aria-label="Close">×</button>
+      <span id="modalKicker" class="kicker">EVENT</span>
+      <h3 id="modalTitle">Event</h3>
+      <p id="modalText">More information will be added here.</p>
+      <div id="modalMedia" class="modal-media"></div>
+      <div class="modal-note">Details coming soon.</div>
+    </div>
+  </div>
+
+  <div class="quick-grid">
+    <button data-go="pyq">PYQ <small>Previous year papers</small></button>
+    <button data-go="formulas">FORMULA HUB <small>College formula sheets</small></button>
+    <button data-go="games">MATH ARCADE <small>Play & learn</small></button>
+  </div>
+</section>
+
+<section id="about" class="page">
+  <div class="section-title"><span class="kicker">THE DEPARTMENT</span><h2>ABOUT</h2></div>
+  <div class="about-layout">
+    <div class="blackbox photo"><span>PHOTO PLACEHOLDER</span><small>Add photo as <b>about.png</b></small></div>
+    <div class="panel"><h3>MATHEMATICS AT FAC</h3><p>Use this space for the department introduction, history, activities, student initiatives and academic information.</p><div class="facts"><b>LOGIC</b><b>CALCULUS</b><b>PROBLEM SOLVING</b></div></div>
+  </div>
+</section>
+
+<section id="pyq" class="page">
+  <div class="section-title"><span class="kicker">STUDY ARCHIVE</span><h2>PYQ</h2><p>Previous Year Questions — add your PDF links or files later.</p></div>
+  <div class="year-grid">
+    <button>1st SEM <span>PYQ →</span></button><button>2nd SEM <span>PYQ →</span></button>
+    <button>3rd SEM <span>PYQ →</span></button><button>4th SEM <span>PYQ →</span></button>
+    <button>5th SEM <span>PYQ →</span></button><button>6th SEM <span>PYQ →</span></button>
+  </div>
+</section>
+
+<section id="formulas" class="page">
+  <div class="section-title"><span class="kicker">QUICK REFERENCE</span><h2>FORMULA HUB</h2><p>Tap a topic or search for a formula.</p></div>
+  <input id="formulaSearch" class="search" placeholder="Search: derivative, integration, variance, AP..." autocomplete="off">
+  <div class="formula-grid" id="formulaGrid"></div>
+</section>
+
+<section id="strength" class="page">
+  <div class="section-title"><span class="kicker">DEPARTMENT DATA</span><h2>STRENGTH</h2></div>
+  <div class="strength"><div class="number"><strong id="count">00</strong><span>STUDENTS</span></div><div class="panel"><h3>OUR COMMUNITY</h3><p>Replace the number above with the actual department strength in <b>script.js</b>.</p><div class="bars"><i></i><i></i><i></i><i></i><i></i></div></div></div>
+</section>
+
+<section id="faculty" class="page">
+  <div class="section-title"><span class="kicker">PEOPLE</span><h2>FACULTY</h2></div>
+  <div class="faculty-grid">
+    <article class="person"><div class="blackbox smallpic">PHOTO</div><h3>Faculty Name</h3><p>Designation / Subject</p></article>
+    <article class="person"><div class="blackbox smallpic">PHOTO</div><h3>Faculty Name</h3><p>Designation / Subject</p></article>
+    <article class="person"><div class="blackbox smallpic">PHOTO</div><h3>Faculty Name</h3><p>Designation / Subject</p></article>
+  </div>
+</section>
+
+<section id="notices" class="page">
+  <div class="section-title"><span class="kicker">NOTICE BOARD</span><h2>NOTICES</h2></div>
+  <div class="notice-list">
+    <article><b>01</b><div><h3>Department Notice</h3><p>Add notice details and date here.</p></div></article>
+    <article><b>02</b><div><h3>Exam / Assignment</h3><p>Add important academic information here.</p></div></article>
+    <article><b>03</b><div><h3>General Notice</h3><p>Add the latest department announcement here.</p></div></article>
+  </div>
+</section>
+
+<section id="games" class="page">
+  <div class="section-title"><span class="kicker">INTERACTIVE</span><h2>MATH ARCADE</h2><p>Small games for the department website.</p></div>
+  <div class="game-tabs"><button class="gactive" data-game="reaction">SYMBOL REACTION</button><button data-game="quiz">QUICK QUIZ</button><button data-game="calc">MENTAL MATH</button></div>
+  <div class="game reaction activegame" id="reaction"><h3>Tap the symbol!</h3><p>Hit the moving ∑ before it disappears.</p><div id="gameArena"><button id="target">∑</button></div><div class="gamebar">Score: <b id="gscore">0</b> <button id="start">START</button></div></div>
+  <div class="game" id="quiz"><h3 id="qtext">What is d(x²)/dx?</h3><div id="qanswers"></div><p id="qresult"></p></div>
+  <div class="game" id="calc"><h3 id="calcQ">7 × 8 = ?</h3><input id="calcA" type="number" placeholder="Answer"><button class="enter smallenter" id="check">CHECK</button><p id="calcResult"></p></div>
+</section>
+
+<section class="closing">
+  <div class="equation">∫ + ∑ + π + √x + ∞ = MATH</div>
+  <h2>KEEP<br><span>CALCULATING.</span></h2>
+  <p>Mathematics Department • FAC • 2026</p>
+</section>
+</main>
+<footer>MATHEMATICS DEPARTMENT • ACADEMIC HUB</footer>
+<script src="script.js"></script>
+</body>
+</html>
